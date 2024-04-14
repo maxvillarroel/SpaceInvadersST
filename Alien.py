@@ -7,7 +7,7 @@ class Alien(GameObject):
 
     _last_shoot_time = 0.0
     _alien_fleet = []
-    _CADENCE = 1/4
+    _CADENCE = 1/3
 
     def __init__(self, x, y):
         super().__init__(x, y, "Recursos/Alien.png", "Alien")

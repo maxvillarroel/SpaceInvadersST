@@ -1,5 +1,5 @@
 import time
-from MiniGameEngine import GameObject
+from MiniGameEngine import GameObject, GameWorld
 from Bullet import Bullet
 
 
@@ -43,3 +43,4 @@ class SpaceShip(GameObject):
                 print(f"-Space Ship: Ouch! Me dieron! Pero aun tengo {self._pts} puntosa de vida")
             else:
                 self.destroy()
+                GameWorld._getInstance().exitGame()
