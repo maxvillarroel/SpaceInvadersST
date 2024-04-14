@@ -19,7 +19,7 @@ class Game(GameWorld):
 
     def onUpdate(self, dt):
         fps = round(1 / dt, 1)
-        # print(fps)
+        #print(fps)
         if self.isPressed("Escape"):
             self.exitGame()
 
