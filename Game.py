@@ -12,9 +12,12 @@ class Game(GameWorld):
         super().__init__(800, 600, title="Actividad 01", bgpic="Recursos/Fondo.png")
 
         
-        # agregamos a los actores
+        # agregamos a los actores 
         SpaceShip(400, 540)
-        self.aliens = [Alien(i, j) for i in range(100, 800, 100) for j in (50, 150, 250)]
+
+        for i in range(100, 800, 100):
+            for j in (50, 150, 250):
+                Alien(i, j) 
 
 
     def onUpdate(self, dt):
@@ -22,6 +25,9 @@ class Game(GameWorld):
         #print(fps)
         if self.isPressed("Escape"):
             self.exitGame()
+
+        #Dispara
+        Alien.fire(dt)
 
 
 # -- show time
