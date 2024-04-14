@@ -20,7 +20,8 @@ class Bullet(GameObject):
 
     # manejamos las colisiones
     def onCollision(self, dt, gobj):
-        self.destroy()
+        if gobj.getTipo() in ("Alien", "AlienBullet"): 
+            self.destroy()
 
 class AlienBullet(GameObject):
     # inicializamos la Balas
@@ -40,5 +41,5 @@ class AlienBullet(GameObject):
 
     # manejamos las colisiones
     def onCollision(self, dt, gobj):
-        if gobj.getTipo() == "SpaceShip": 
+        if gobj.getTipo() in ("SpaceShip", "Bullet"): 
             self.destroy()
